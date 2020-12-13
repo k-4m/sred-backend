@@ -15,6 +15,12 @@ video_processor = VideoProcessor()
 
 class EmotionsDetection(Resource):
     def get(self):
+        if not video_processor.data:
+            return app.response_class(
+            response=json.dumps({"message": "no faces found"}),
+            status=200,
+            mimetype='application/json'
+            )
         return app.response_class(
             response=json.dumps(video_processor.data),
             status=200,
