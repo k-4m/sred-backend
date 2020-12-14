@@ -15,16 +15,19 @@ When requested permissions are given, you will be able to get json output on the
 
 ```
 {
-  "emotion": {
-    "angry": 0.011994630040135235,
-    "disgust": 2.153855739595034e-9,
-    "fear": 0.004935113247483969,
-    "happy": 1.9427111030978494e-7,
-    "sad": 0.9675447829067707,
-    "surprise": 0.000003176235097157587,
-    "neutral": 99.01552200317383
-  },
-  "dominant_emotion": "neutral"
+  "image": "/9j/4AAQSkZJRgAB...6Em5RP/9k=",
+  "emotions_data": {
+    "emotion": {
+      "angry": 1.9495684653520584,
+      "disgust": 4.85497508861954e-7,
+      "fear": 0.5955945234745741,
+      "happy": 3.42639427941549e-7,
+      "sad": 39.424800872802734,
+      "surprise": 0.0003347103756823344,
+      "neutral": 58.029705286026
+    },
+    "dominant_emotion": "neutral"
+  }
 }
 ``` 
 
