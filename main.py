@@ -21,8 +21,13 @@ class EmotionsDetection(Resource):
             status=200,
             mimetype='application/json'
             )
+
+        emotions_response = {
+            'image': video_processor.image.decode('utf8'),
+            'emotions_data': video_processor.data,
+        }
         return app.response_class(
-            response=json.dumps(video_processor.data),
+            response=json.dumps(emotions_response),
             status=200,
             mimetype='application/json'
         )
