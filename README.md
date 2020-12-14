@@ -5,7 +5,7 @@
 This project is running on Python 3.6. 
 Create a virtualenv and then install dependencies:
 ```
-pip install -v requirements.txt
+pip install -r requirements.txt
 ```
 
 ### usage
