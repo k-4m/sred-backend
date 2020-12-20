@@ -2,7 +2,7 @@ import sys
 import os
 import json
 from flask import Flask
-from flask_restful import Resource, Api, reqparse
+from flask_restful import Resource, Api
 from flask_cors import CORS
 from video_processor import VideoProcessor, API_HOST, API_PORT
 
