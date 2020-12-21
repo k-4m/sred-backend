@@ -1,7 +1,6 @@
 import cv2
 import face_recognition
-import PIL.Image
-import PIL.ImageDraw
+from PIL import Image, ImageDraw, ImageChops
 import base64
 from io import BytesIO
 from apscheduler.schedulers.background import BackgroundScheduler
@@ -20,13 +19,14 @@ class VideoProcessor:
     def start_sheduler(self):
         self.sched.add_job(self.process_input, 'interval', seconds=INTERVAL)
         self.sched.start()
-        # self.sched.add_job(self.process_input, 'interval', seconds=1)
 
     @staticmethod
     def image_with_outlined_face(frame):
         face_locations = face_recognition.face_locations(frame)
-        image = PIL.Image.fromarray(frame)
-        draw = PIL.ImageDraw.Draw(image)
+        image = Image.fromarray(frame)
+        r, g, b = image.split()
+        image = Image.merge('RGB', (b, g, r))
+        draw = ImageDraw.Draw(image)
         for top, left, bottom, right in face_locations:
             draw.rectangle([left, top, right, bottom], outline="green", width=10)
         buffered = BytesIO()
