@@ -33,7 +33,7 @@ class EmotionsDetection(Resource):
         )
 
 
-api.add_resource(EmotionsDetection, '/', methods=['GET'])
+api.add_resource(EmotionsDetection, '/data', methods=['GET'])
 
 if __name__ == '__main__':
     try:

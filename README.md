@@ -5,13 +5,13 @@
 This project is running on Python 3.6. 
 Create a virtualenv and then install dependencies:
 ```
-pip install -v requirements.txt
+pip install -r requirements.txt
 ```
 
 ### running in container
 
 You can also try following when running on Linux 
-(unfortunately, that wont work with mac)п
+(unfortunately, that wont work with mac)
 ```
 docker build -t sred-backend
 docker run -it -p 3000:3000 --device /dev/video0 --rm sred-backend
